@@ -4,8 +4,8 @@
     --card-bg: #1e1e1e;
     --text-main: #e0e0e0;
     --text-muted: #b0b0b0;
-    --accent: #4da6ff;
-}
+    /* OLD: --accent: #4da6ff; */
+    --accent: #00cfcf; /* Teal/Cyan matched from LogoDark.png */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,7 +25,7 @@ body {
 /* Header & Typography */
 header {
     background-color: #0a0a0a;
-    padding: 50px 0;
+    padding: 40px 0; /* Reduced vertical padding */
     text-align: center;
     border-bottom: 2px solid #2a2a2a;
 }
@@ -37,12 +37,22 @@ header h1 {
     color: #ffffff;
 }
 
+/* New style rule to position and size your logo */
+.header-logo {
+    max-width: 450px; /* Recommended max width for the graphic */
+    width: 90%; /* For responsiveness on small screens */
+    height: auto;
+    margin: 0 auto; /* Centers the logo horizontally */
+    display: block;
+}
+
 header p {
-    color: var(--accent);
+    color: var(--accent); /* This color is now Teal */
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    letter-spacing: 2.5px; /* Technical, high-precision feel */
+    font-size: 1rem;
+    margin-top: 15px; /* Separation from the logo graphic */
+    margin-bottom: 0;
 }
 
 section {
