@@ -8,6 +8,10 @@
     --accent: #00cfcf; /* Teal/Cyan matched from LogoDark.png */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -54,6 +58,48 @@ header p {
     font-size: 1rem;
     margin-top: 15px; /* Separation from the logo graphic */
     margin-bottom: 0;
+}
+
+/* Sticky Navigation Bar */
+.top-nav {
+    position: sticky;
+    top: 0; /* Tells it to stick at the very top of the viewport */
+    background-color: rgba(10, 10, 10, 0.95); /* Slightly transparent to match header */
+    backdrop-filter: blur(8px); /* Creates a modern frosted glass effect over text */
+    z-index: 100; /* Ensures the menu stays on top of images and modals */
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 20px;
+}
+
+.nav-container a {
+    color: var(--text-main);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-container a:hover {
+    color: var(--accent); /* Uses your logo's Teal/Cyan */
+}
+
+/* Mobile Responsiveness for Navigation */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-wrap: wrap; /* Allows links to stack on narrow phone screens */
+        gap: 20px;
+        padding: 15px;
+    }
 }
 
 section {
