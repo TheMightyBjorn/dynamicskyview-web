@@ -32,3 +32,42 @@ modal.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+
+// --- Contact Form Background Submission ---
+
+const contactForm = document.querySelector('.contact-form form');
+const submitBtn = document.querySelector('.submit-btn');
+
+contactForm.addEventListener('submit', async function(e) {
+    // 1. Stop the browser from redirecting to the Web3Forms page
+    e.preventDefault(); 
+    
+    // 2. Change the button text to show the client it is working
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.style.cursor = 'wait';
+
+    // 3. Send the data silently in the background
+    const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(contactForm)
+    });
+
+    // 4. Handle the success
+    if (response.ok) {
+        contactForm.reset(); // This blanks out the form fields!
+        submitBtn.textContent = 'Message Sent!';
+        submitBtn.style.backgroundColor = '#00cfcf'; // Changes to your teal color
+        submitBtn.style.color = '#000';
+        
+        // 5. Revert the button back to normal after 3 seconds
+        setTimeout(() => {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.style.backgroundColor = ''; 
+            submitBtn.style.cursor = 'pointer';
+        }, 3000);
+    } else {
+        submitBtn.textContent = 'Error. Please try again.';
+        submitBtn.style.backgroundColor = '#ff4d4d'; // Red for error
+    }
+});
