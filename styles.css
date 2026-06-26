@@ -181,6 +181,42 @@ section h2 {
     to {transform: scale(1); opacity: 1;}
 }
 
+/* Equipment Specs Grid */
+.specs-grid {
+    display: grid;
+    /* Auto-arranges into 2 columns on desktop, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.spec-item {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent); /* Uses your logo's teal color */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.spec-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on mouse hover */
+}
+
+.spec-item h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.spec-item p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
 /* Footer */
 footer {
     text-align: center;
