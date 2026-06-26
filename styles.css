@@ -74,6 +74,7 @@ section h2 {
     font-size: 1.1rem;
     max-width: 800px;
     color: var(--text-muted);
+    margin-bottom: 20px; /* Adds breathing room between your paragraphs */
 }
 
 /* Responsive Portfolio Grid */
